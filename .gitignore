@@ -1,0 +1,4 @@
+# ViM Configuration Ignore File
+
+# Ignore the netrw history file
+.netrwhist
