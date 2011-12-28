@@ -3,14 +3,14 @@
 " ============================================
 
 " Default indentation settings (use spaces)
-set ts=4 sts=4 sw=4 noexpandtab
+set ts=4 sts=4 sw=4 expandtab
 
 " enable line numbers
 set nu
 
 " Show visible tabs and eols
-" set list
 set listchars=tab:▸\ ,eol:¬
+set list
 
 " Set colour scheme
 colors blackboard
@@ -24,6 +24,16 @@ let mapleader=","
 
 " quick switch of list
 nmap <leader>l :set list!<CR>
+
+" enable multiple pasting
+xnoremap p pgvy
+
+" enable highlighting of trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 " ============================================
