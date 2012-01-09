@@ -45,7 +45,7 @@ if has("autocmd")
 
     " enable file type detection
     filetype on
-    
+
     " setup file type indentation settings
     autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
 
