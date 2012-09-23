@@ -57,4 +57,11 @@ if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
+" ============================================
+" = GOOGLE PROTOCOL BUFFER SYNTAX
+" ============================================
+
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
 
