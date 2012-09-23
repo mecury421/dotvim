@@ -1,13 +1,18 @@
-## Installation:
+**Installation**
+
+Clone this git repository into the your `~/.vim` folder with the following command:
 
     git clone git://github.com/mecury421/dotvim.git ~/.vim
 
-## Create symlinks:
+**Create symlinks**
+
+Add the symlinks so that vim correctly loads the vimrc file:
 
     ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
 
 or
 
     ~/.vim/scripts/install.sh
+
+Done!
 
