@@ -55,6 +55,13 @@ if has("autocmd")
 
     " reload the vimrc file if we have just made changes to it!
     autocmd bufwritepost .vimrc source $MYVIMRC
+
+
+    " ============================================
+    " = MARK DOWN SYNTAX
+    " ============================================
+    autocmd BufNewFile,BufReadPost *.mkd,*.markdown,*.md set filetype=mkd
+
 endif
 
 " ============================================
@@ -64,15 +71,4 @@ endif
 augroup filetype
   au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
-
-" ============================================
-" = MARK DOWN SYNTAX
-" ============================================
-
-" do we have autocmd?
-if has("autocmd")
-
-    " set file type as markdown
-    autocmd BufNewFile,BufReadPost *.mkd,*.markdown,*.md set filetype=mkd
-endif
 
