@@ -65,3 +65,14 @@ augroup filetype
   au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
 
+" ============================================
+" = MARK DOWN SYNTAX
+" ============================================
+
+" do we have autocmd?
+if has("autocmd")
+
+    " set file type as markdown
+    autocmd BufNewFile,BufReadPost *.mkd,*.markdown,*.md set filetype=mkd
+endif
+
