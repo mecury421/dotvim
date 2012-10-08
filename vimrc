@@ -56,11 +56,15 @@ if has("autocmd")
     " reload the vimrc file if we have just made changes to it!
     autocmd bufwritepost .vimrc source $MYVIMRC
 
-
     " ============================================
     " = MARK DOWN SYNTAX
     " ============================================
     autocmd BufNewFile,BufReadPost *.mkd,*.markdown,*.md set filetype=mkd
+
+    " ============================================
+    " = GO SYNTAX
+    " ============================================
+    autocmd BufNewFile,BufReadPost *.go set filetype=go
 
 endif
 
