@@ -2,11 +2,16 @@
 " = GENERAL
 " ============================================
 
+execute pathogen#infect()
+
 " Default indentation settings (use spaces)
 set ts=4 sts=4 sw=4 expandtab
 
+" Enable colour syntax highlighting
+syntax on
+
 " enable line numbers
-set nu
+set number relativenumber
 
 " Show visible tabs and eols
 set listchars=tab:▸\ ,eol:¬
@@ -14,6 +19,13 @@ set list
 
 " Set colour scheme
 colors blackboard
+
+set laststatus=2
+set mouse=a
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " ============================================
 " = CUSTOM KEY MAPPING
@@ -60,6 +72,13 @@ if has("autocmd")
     " = GO SYNTAX
     " ============================================
     autocmd BufNewFile,BufReadPost *.go set filetype=go
+
+    " autocmd vimenter * NERDTree
+
+    " NERD Tree configuration
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+    map <C-n> :NERDTreeToggle<CR>
 
 endif
 
